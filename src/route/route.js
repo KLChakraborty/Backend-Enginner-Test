@@ -14,8 +14,8 @@ router.post('/createCard', cardController.createCard)
 
 router.get('/getCard', cardController.getCard)
 
-router.all('/*', function(req, res){
-    return res.status(400).send({status: false, message: 'Path not found'})
+router.all('/*', function (req, res) {
+    return res.status(400).send({ status: false, message: 'Path not found' })
 })
 
 module.exports = router
