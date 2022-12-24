@@ -12,11 +12,13 @@ cardType: {
 },
 customerName: {
     type: String,
-    required: true
+    required: true,
+    trim: true
 },
 status: {
     type: String,
-    default: active
+    required: true,
+    default: ACTIVE
 },
 vision: {
     type: String,
