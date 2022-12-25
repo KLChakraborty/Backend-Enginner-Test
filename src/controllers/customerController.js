@@ -26,7 +26,7 @@ const createCustomer = async function (req, res) {
         if (!validator.validAddress(address)) return res.status(400).send({ status: false, message: 'Address should be a string' })
 
         if (!validator.validInput(DOB)) return res.status(400).send({ status: false, message: 'DOB should be valid and required' })
-        if (!validator.ValidDOB(DOB)) return res.status(400).send({ status: false, message: 'DOB should be in the format YYYY-MM-DD' })
+        if (!validator.validDOB(DOB)) return res.status(400).send({ status: false, message: 'DOB should be in the format YYYY-MM-DD' })
         let customerId = uuid.v4()
         let obj = {
             firstName: firstName,

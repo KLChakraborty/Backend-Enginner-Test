@@ -25,8 +25,12 @@ const validAddress = function (input) {
     return input.match(/^[#.0-9a-zA-Z\s,-]+$/)
 }
 
-const ValidDOB = function (input) {
+const validDOB = function (input) {
     return input.match(/^((?:19|20)[0-9][0-9])-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/)
 }
 
-module.exports = { requiredInput, validInput, validName, validEmail, validPhone, validAddress, ValidDOB }
+const validVision = function (input){
+    return input.match(/^.+[^-][^0-9]+$/)
+}
+
+module.exports = { requiredInput, validInput, validName, validEmail, validPhone, validAddress, validDOB, validVision }
