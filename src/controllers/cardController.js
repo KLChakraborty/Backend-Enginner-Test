@@ -18,6 +18,9 @@ const createCard = async function (req, res) {
 
         if (!validator.validInput(cardType)) return res.status(400).send({ status: false, message: 'cardType should be valid string' })
         if (!['REGULAR', 'SPECIAL'].includes(cardType)) return res.status(400).send({ status: false, message: 'cardtype should be REGULAR or SPECIAL' })
+
+        if (!validator.validInput(vision)) return res.status(400).send({ status: false, message: 'vision should be valid and required' })
+
         let findCard = await cardModel.find()
         let cardNumber = 'C00' + (findCard.length + 1)
         let obj = {
