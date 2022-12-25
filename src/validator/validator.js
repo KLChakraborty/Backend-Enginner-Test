@@ -1,5 +1,6 @@
 const requiredInput = function (input) {
-    return Object.keys(input).length > 0
+      if(Object.keys(input).length > 0) return true
+      return false
 }
 
 const validInput = function (input) {

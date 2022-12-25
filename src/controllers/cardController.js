@@ -5,7 +5,7 @@ const uuid = require('uuid')
 
 const createCard = async function (req, res) {
     try {
-        if (!validator.requiredInput(req.body).length > 0) return res.status(400).send({ status: false, message: 'Input is required' })
+        if (!validator.requiredInput(req.body)) return res.status(400).send({ status: false, message: 'Input is required' })
         const { cardType, customerName, customerID, vision } = req.body
 
         if (!validator.validInput(customerID)) return res.status(400).send({ status: false, message: 'customerID should be valid and required' })
@@ -18,11 +18,12 @@ const createCard = async function (req, res) {
 
         if (!validator.validInput(cardType)) return res.status(400).send({ status: false, message: 'cardType should be valid string' })
         if (!['REGULAR', 'SPECIAL'].includes(cardType)) return res.status(400).send({ status: false, message: 'cardtype should be REGULAR or SPECIAL' })
-
+        let findCard = await cardModel.find()
+        let cardNumber = 'C00' + (findCard.length + 1)
         let obj = {
             cardType: cardType,
             customerName: customerName,
-            customerId: presentCustomer.customerID,
+            customerID: customerID,
             vision: vision,
             cardNumber: cardNumber
         }

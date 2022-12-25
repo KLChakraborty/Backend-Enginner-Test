@@ -25,11 +25,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        lowercase: true
+        lowercase: true,
+        trim: true
     },
     address: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     customerID: {
         type: String,

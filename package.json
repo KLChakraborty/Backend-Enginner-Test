@@ -1,0 +1,24 @@
+{
+  "name": "backend-enginner-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KLChakraborty/Backend-Enginner-Test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KLChakraborty/Backend-Enginner-Test/issues"
+  },
+  "homepage": "https://github.com/KLChakraborty/Backend-Enginner-Test#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.8.1",
+    "uuid": "^9.0.0"
+  }
+}
